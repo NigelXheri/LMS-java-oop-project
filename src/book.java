@@ -5,7 +5,7 @@ public class book {
     private int pages;
 
 
-
+    private int ISBN;
 
 
 }
