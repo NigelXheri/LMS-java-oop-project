@@ -4,7 +4,7 @@ public class main {
 
         System.out.println("Hello World");
 
-        Student alfred = new Student("Alfred", "Smith", 40);
+        Member alfred = new Member("Alfred", "Smith", 40);
 
         System.out.println(alfred.toString());
 

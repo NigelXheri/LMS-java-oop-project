@@ -1,4 +1,4 @@
-public class Student {
+public class Member {
 
     // 1. Class Attributes
     private int id;
@@ -9,7 +9,7 @@ public class Student {
     private static int base_id = 100;
 
     // 2. Constructor
-    public Student(String name, String surname,int age){
+    public Member(String name, String surname, int age){
         this.id  = ++base_id;
         this.name = name;
         this.surname = surname;
