@@ -7,7 +7,7 @@ public class Book {
     private String author;
     private String type;
     private String isbn;
-    private int nr_of_copies;
+    private int numberOfCopies;
     private int copies_available;
 
     // Constructor of the class
@@ -18,7 +18,7 @@ public class Book {
         this.author = author;
         this.type = type;
         this.isbn = isbn;
-        this.nr_of_copies = nr_of_copies;
+        this.numberOfCopies = nr_of_copies;
         this.copies_available = copies_available;
     }
 }
