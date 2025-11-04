@@ -98,7 +98,6 @@ public class Book {
     public void returnBook() {
         if (copiesAvailable < numberOfCopies) {
             copiesAvailable++;
-            System.out.println("Book  has been successfully returned!");
         }
     }
 
