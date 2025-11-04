@@ -1,45 +1,41 @@
 public class Book {
 
-    // Class atributes
-    private int idBook;
-    private int quantity;
+    public enum BookTheme {
+        FICTION,
+        NON_FICTION,
+        SCIENCE,
+        RELIGION,
+        POLITICS
+    }
+
+    private String isbn;
     private String title;
     private String author;
-    private String type;
-    private String Isbn;
+    private BookTheme bookTheme;
     private int numberOfCopies;
     private int copiesAvailable;
 
     // Constructor of the class
-    public Book(int idBook, int quantity, String title, String author, String type, String Isbn, int nr0fCopies, int copiesAvailable) {
-        this.idBook = idBook;
-        this.quantity = quantity;
+    public Book(String isbn, String title, String author, BookTheme bookTheme, int numberOfCopies) {
+        this.isbn = isbn;
         this.title = title;
         this.author = author;
-        this.type = type;
-        this.Isbn = Isbn;
+        this.bookTheme = bookTheme;
         this.numberOfCopies = numberOfCopies;
-        this.copiesAvailable = copiesAvailable;
+        this.copiesAvailable = numberOfCopies;
     }
-    // Getters and Setters for all the atributes
 
-    public int getIdBook() {
-        return idBook;
-    }
-    public int getQuantity() {
-        return quantity;
-    }
     public String getTitle() {
         return title;
     }
     public String getAuthor() {
         return author;
     }
-    public String getType() {
-        return type;
+    public BookTheme getCategory() {
+        return bookTheme;
     }
     public String getIsbn() {
-        return Isbn;
+        return isbn;
     }
     public int getNumberOfCopies() {
         return numberOfCopies;
@@ -49,14 +45,6 @@ public class Book {
     }
 
 
-    public void setIdBook(int idBook) {
-        this.idBook = idBook;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -65,12 +53,12 @@ public class Book {
         this.author = author;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCategory(BookTheme bookTheme) {
+        this.bookTheme = bookTheme;
     }
 
     public void setIsbn(String isbn) {
-        this.Isbn = Isbn;
+        this.isbn = isbn;
     }
 
     public void setNumberOfCopies(int numberOfCopies) {
@@ -82,36 +70,35 @@ public class Book {
     }
 
     //String toString
-
     public String toString() {
-        return "Book {" +
-                "idBook=" + idBook +
-                ", quantity=" + quantity +
+        return "Book { " +
+                "ISBN='" + isbn + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
-                ", type='" + type + '\'' +
-                ", Isbn='" + Isbn + '\'' +
+                ", category='" + bookTheme + '\'' +
                 ", numberOfCopies=" + numberOfCopies +
                 ", copiesAvailable=" + copiesAvailable +
                 '}';
     }
 
+
     // Methods
 
     // 1. Borrow a book
     public boolean borrowBook() {
-        if (copiesAvailable > 0) {
+        if (isAvailable()) {
             copiesAvailable--;
+            System.out.println("Book " + this.title + " has been successfully borrowed!"); // IMPLEMENT BOOK BORROWING
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     // 2. Return a book (increase available copies)
     public void returnBook() {
         if (copiesAvailable < numberOfCopies) {
             copiesAvailable++;
+            System.out.println("Book  has been successfully returned!");
         }
     }
 
