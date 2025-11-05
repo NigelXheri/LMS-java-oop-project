@@ -1,3 +1,13 @@
+# Library Management System - Sprint 1
+```
+          ┓ ┏  ┓                                 
+          ┃┃┃┏┓┃┏┏┓┏┳┓┏┓  ╋┏┓  ┓┏┏┓┓┏┏┓          
+          ┗┻┛┗ ┗┗┗┛┛┗┗┗   ┗┗┛  ┗┫┗┛┗┻┛           
+┓ •┓           ┳┳┓              ┛     ┏┓         
+┃ ┓┣┓┏┓┏┓┏┓┓┏  ┃┃┃┏┓┏┓┏┓┏┓┏┓┏┳┓┏┓┏┓╋  ┗┓┓┏┏╋┏┓┏┳┓
+┗┛┗┗┛┛ ┗┻┛ ┗┫  ┛ ┗┗┻┛┗┗┻┗┫┗ ┛┗┗┗ ┛┗┗  ┗┛┗┫┛┗┗ ┛┗┗
+            ┛            ┛               ┛  
+```
 ## Project Goal
 
 This is a simple Library Management System (LMS) Java application designed to help a library manage its books and members. It provides a basic digital framework for tracking which books are available, which have been borrowed, and who borrowed them. The project focuses on applying Object-Oriented Programming (OOP) principles to model real-world entities and their interactions in a clear and organized way.
@@ -42,6 +52,7 @@ These interactions allow the system to manage borrowing and returning operations
 
 ## UML Class Diagram
 
-![[LMS-java-oop-project-light 1.png | center | 610]]
+
+<img style="display: block; margin: 0 auto;" src="docs/LMS-java-oop-project-light.png" width="500" alt="Logo">
 
 <p style="text-align:center;">Nigel Xherimeja, Fatbardh Troci<br> University Metropolitan Tirana<br>BSc Computer Engineering</p>
