@@ -54,7 +54,7 @@ public class Loan {
         if (!returned) {
             if (isOverdue()) System.out.println("Loan was overdue!");
             returned = true;
-            book.returnBook();
+            book.modifyAvailableCopiesBy(1);
             System.out.println("Loan completed: " + book.getTitle() + " returned by " + member.getName());
         } else {
             System.out.println("This loan was already marked as returned.");

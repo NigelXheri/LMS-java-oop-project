@@ -84,22 +84,22 @@ public class Book {
 
     // Methods
 
-    // 1. Borrow a book
-    public boolean borrowBook() {
-        if (isAvailable()) {
-            copiesAvailable--;
-            System.out.println("Book " + this.title + " has been successfully borrowed!"); // IMPLEMENT BOOK BORROWING
-            return true;
+    public void modifyAvailableCopiesBy(int modifierNumber){
+        if (-modifierNumber > copiesAvailable) {
+            System.out.println("Cannot reduce available copies by " + -modifierNumber + ". " + title + " only has " + copyNumberString(copiesAvailable) + " available.");
+            return;
         }
-        return false;
+        else if (modifierNumber + copiesAvailable > numberOfCopies){
+            System.out.println(title + " can only have up to " + copyNumberString(numberOfCopies) + " available" + ". You can only add up to " + (numberOfCopies - copiesAvailable) + " copies.");
+        }
+        copiesAvailable += modifierNumber;
+        System.out.println(title + " has now " + copyNumberString(copiesAvailable) + " available");
     }
 
-    // 2. Return a book (increase available copies)
-    public void returnBook() {
-        if (copiesAvailable < numberOfCopies) {
-            copiesAvailable++;
-        }
+    public void removeOneAvailableCopy(){
+        modifyAvailableCopiesBy(-1);
     }
+
 
     // 3. Check if book is available
     public boolean isAvailable() {
@@ -107,10 +107,27 @@ public class Book {
     }
 
     // 4. Add copies to inventory
-    public void addCopies(int amount) {
-        if (amount > 0) {
-            numberOfCopies += amount;
-            copiesAvailable += amount;
+    public void addCopies(int copies) {
+        if (copies < 1) {
+            System.out.println("Please enter a valid number of copies to remove.");
+            return;
         }
+        numberOfCopies += copies;
+        copiesAvailable += copies;
+        System.out.println(copyNumberString(copies) +" of book " + title + " has been added successfully.");
+    }
+
+    public void removeCopies(int copies){
+        if(copies > copiesAvailable || copies < 1){
+            System.out.println("Please enter a valid number of copies to remove.");
+            return;
+        }
+        numberOfCopies -= copies;
+        copiesAvailable -= copies;
+        System.out.println(copyNumberString(copies) +" of book " + title + " has been removed successfully.");
+    }
+
+    private String copyNumberString(int copies){
+        return copies == 1 ? copies + " copy" : copies + " copies";
     }
 }

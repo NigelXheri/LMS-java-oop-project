@@ -33,6 +33,9 @@ public class Main {
         System.out.println(b1);
         alfred.displayBorrowedBooks();
 
+        b1.removeCopies(1);
+        b1.modifyAvailableCopiesBy(-50);
+
         alfred.returnBook(b2);
         alfred.displayBorrowedBooks();
         alfred.returnBook(b1);

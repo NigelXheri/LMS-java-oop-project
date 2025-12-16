@@ -1,43 +1,16 @@
 import java.util.ArrayList;
 
-public class Member {
+public class Member extends User{
 
     // 1. Class Attributes
-    private final int id;
-    private final String name;
-    private final String surname;
-    private int age;
     private ArrayList<Loan> activeLoans;
-
-    private static int base_id = 100;
 
     // 2. Constructor
     public Member(String name, String surname, int age){
-        this.id  = ++base_id;
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
+        super(name,surname,age);
         this.activeLoans = new ArrayList<>();
     }
 
-    // 3.1 GET Methods
-    public int getId(){
-        return this.id;
-    }
-    public String getName(){
-        return this.name;
-    }
-    public String getSurname(){
-        return this.surname;
-    }
-    public int getAge(){
-        return this.age;
-    }
-
-    // 3.2 SET Methods
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     // 4. toString()
     @Override
@@ -60,10 +33,12 @@ public class Member {
             System.out.println("Book cannot be null");
             return false;
         }
-        if(!book.borrowBook()){
+        if(!book.isAvailable()){
             System.out.println("Book is not available. Could not borrow this book.");
             return false;
         }
+        book.removeOneAvailableCopy();
+        System.out.println("Book " + book.getTitle() + " has been successfully borrowed!");
         Loan loan = new Loan(this, book);
         activeLoans.add(loan);
         System.out.println(this.name + " borrowed: " + book.getTitle() + " (Due: " + loan.getDueDate() + ")");
