@@ -20,7 +20,7 @@ public class Main {
 
 
         // Member Class demo
-        Member alfred = new Member("Alfred", "Smith", 40);
+        Member alfred = new Member("Alfred", "Smith", 140, User.Role.MEMBER);
 
         System.out.println(alfred.toString());
 

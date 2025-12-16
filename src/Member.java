@@ -6,8 +6,12 @@ public class Member extends User{
     private ArrayList<Loan> activeLoans;
 
     // 2. Constructor
-    public Member(String name, String surname, int age){
-        super(name,surname,age);
+    public Member(String name, String surname, int age, String email, String password, Role role){
+        super(name,surname,age, email, password,role);
+        this.activeLoans = new ArrayList<>();
+    }
+    public Member(String name, String surname, int age, Role role){
+        super(name,surname,age, role);
         this.activeLoans = new ArrayList<>();
     }
 
