@@ -41,7 +41,7 @@ public class FileManager {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] parts = line.split("|");
+                String[] parts = line.split("\\|");
 
                 // Validation
                 if (parts.length == 6) {
