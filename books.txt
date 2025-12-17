@@ -1,4 +1,5 @@
-111|Dune|Frank Herbert|FICTION|5|5
-222|Sapiens|Yuval Noah Harari|NON_FICTION|3|3
+9780141412648|Dune|Frank Herbert|FICTION|5|5
+9788462018372|Sapiens|Yuval Noah Harari|NON_FICTION|3|3
+0000000000000|Codex Purpureus Beratinus|null|RELIGION|1|1
 9780141439600|Pride and Prejudice|Jane Austen|FICTION|9|9
 9780262033848|Introduction to Algorithms|Thomas H. Cormen|SCIENCE|2|2

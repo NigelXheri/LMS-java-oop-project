@@ -15,7 +15,7 @@ public class Book {
     private int numberOfCopies;
     private int copiesAvailable;
 
-    // Constructor of the class
+    // Constructor
     public Book(String isbn, String title, String author, BookTheme bookTheme, int numberOfCopies, int copiesAvailable) {
         this.isbn = isbn;
         this.title = title;
@@ -91,7 +91,6 @@ public class Book {
 
 
     // Methods
-
     public void modifyAvailableCopiesBy(int modifierNumber){
         if (-modifierNumber > copiesAvailable) {
             System.out.println("Cannot reduce available copies by " + -modifierNumber + ". " + title + " only has " + copyNumberString(copiesAvailable) + " available.");
