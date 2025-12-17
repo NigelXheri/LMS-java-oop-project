@@ -14,7 +14,6 @@ public abstract class User {
     protected String password;
     protected Role role;
 
-
     private static int base_id = 100;
 
     // 2. Constructor
@@ -102,6 +101,7 @@ public abstract class User {
 
     // 3.2 SET Methods
     public void setAge(int age) {
+        validateAge(age);
         this.age = age;
     }
 

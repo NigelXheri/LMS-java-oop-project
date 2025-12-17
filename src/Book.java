@@ -16,6 +16,14 @@ public class Book {
     private int copiesAvailable;
 
     // Constructor of the class
+    public Book(String isbn, String title, String author, BookTheme bookTheme, int numberOfCopies, int copiesAvailable) {
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+        this.bookTheme = bookTheme;
+        this.numberOfCopies = numberOfCopies;
+        this.copiesAvailable = copiesAvailable;
+    }
     public Book(String isbn, String title, String author, BookTheme bookTheme, int numberOfCopies) {
         this.isbn = isbn;
         this.title = title;
@@ -91,6 +99,7 @@ public class Book {
         }
         else if (modifierNumber + copiesAvailable > numberOfCopies){
             System.out.println(title + " can only have up to " + copyNumberString(numberOfCopies) + " available" + ". You can only add up to " + (numberOfCopies - copiesAvailable) + " copies.");
+            return;
         }
         copiesAvailable += modifierNumber;
         System.out.println(title + " has now " + copyNumberString(copiesAvailable) + " available");
@@ -101,12 +110,12 @@ public class Book {
     }
 
 
-    // 3. Check if book is available
+    // Check if book is available
     public boolean isAvailable() {
         return copiesAvailable > 0;
     }
 
-    // 4. Add copies to inventory
+    // Add copies to inventory
     public void addCopies(int copies) {
         if (copies < 1) {
             System.out.println("Please enter a valid number of copies to remove.");

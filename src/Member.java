@@ -6,17 +6,17 @@ public class Member extends User{
     private ArrayList<Loan> activeLoans;
 
     // 2. Constructor
-    public Member(String name, String surname, int age, String email, String password, Role role){
-        super(name,surname,age, email, password,role);
+    public Member(String name, String surname, int age, String email, String password){
+        super(name,surname,age, email, password, Role.MEMBER);
         this.activeLoans = new ArrayList<>();
     }
-    public Member(String name, String surname, int age, Role role){
-        super(name,surname,age, role);
+    public Member(String name, String surname, int age){
+        super(name,surname,age, Role.MEMBER);
         this.activeLoans = new ArrayList<>();
     }
 
 
-    // 4. toString()
+    // toString()
     @Override
     public String toString() {
         return "Member: " + this.name + " " + this.surname + ", Age: " + this.age + ", ID: " + this.id;
@@ -31,7 +31,7 @@ public class Member extends User{
         return null;
     }
 
-
+    // Other Methods
     public boolean borrowBook(Book book){
         if(book == null){
             System.out.println("Book cannot be null");
@@ -64,7 +64,6 @@ public class Member extends User{
         System.out.println("Book: " + book.getTitle() + " has been returned successfully!");
         return true;
     }
-
 
 
     public void displayBorrowedBooks(){

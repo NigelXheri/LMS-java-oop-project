@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args){
@@ -12,15 +14,27 @@ public class Main {
                 "            ┛            ┛               ┛       ");
 
 
+
+        List<Book> libraryInventory = FileManager.loadBooks();
+
+        // If list is empty add some dummy data
+        if(libraryInventory.isEmpty()) {
+            libraryInventory.add(new Book("9780141412648", "Dune", "Frank Herbert", Book.BookTheme.FICTION, 5));
+            libraryInventory.add(new Book("9788462018372", "Sapiens", "Yuval Noah Harari", Book.BookTheme.NON_FICTION, 3));
+        }
+
+
         // Book class demo
         Book b1 = new Book("9780141439600", "Pride and Prejudice", "Jane Austen", Book.BookTheme.FICTION, 10);
         Book b2 = new Book("9780262033848", "Introduction to Algorithms", "Thomas H. Cormen", Book.BookTheme.SCIENCE, 2);
+        libraryInventory.add(b1);
+        libraryInventory.add(b2);
         System.out.println(b1);
         System.out.println(b2);
 
 
         // Member Class demo
-        Member alfred = new Member("Alfred", "Smith", 140, User.Role.MEMBER);
+        Member alfred = new Member("Alfred", "Smith", 40);
 
         System.out.println(alfred.toString());
 
@@ -40,6 +54,10 @@ public class Main {
         alfred.displayBorrowedBooks();
         alfred.returnBook(b1);
         alfred.displayBorrowedBooks();
+
+
+        FileManager.saveBooks(libraryInventory);
+        System.out.println("Goodbye!");
 
 
     }
