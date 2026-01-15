@@ -105,4 +105,9 @@ public abstract class User {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return "User: " + this.name + " " + this.surname + ", Age: " + this.age + ", ID: " + this.id;
+    }
+
 }
