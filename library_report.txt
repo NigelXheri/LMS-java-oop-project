@@ -1,0 +1,29 @@
+===========================================
+       LIBRARY MANAGEMENT SYSTEM REPORT    
+===========================================
+Library: City Public Library
+Generated: 2026-01-21T05:18:47.655994900
+
+--- INVENTORY SUMMARY ---
+Total Books: 6
+Total Members: 3
+Active Loans: 0
+
+--- ALL BOOKS ---
+Book{ISBN='978-0452284234', title='1984', author='George Orwell', theme=FICTION, copies=8/9}
+Book{ISBN='978-0143127550', title='Sapiens: A Brief History of Humankind', author='Yuval Noah Harari', theme=HISTORY, copies=4/4}
+Book{ISBN='978-0307474278', title='The Da Vinci Code', author='Dan Brown', theme=FICTION, copies=4/6}
+Book{ISBN='978-0141439518', title='Pride and Prejudice', author='Jane Austen (1775-1817)', theme=FICTION, copies=4/5}
+Book{ISBN='978-0262033848', title='Introduction to Algorithms', author='Thomas H. Cormen', theme=TECHNOLOGY, copies=2/3}
+Book{ISBN='978-0060850524', title='Brave New World', author='Aldous Huxley', theme=FICTION, copies=1/2}
+
+--- ALL MEMBERS ---
+Member{id=101, name='Alice Smith', plan=Premium Plan, activeLoans=3/5, fees=$0.00}
+Member{id=102, name='Bob Wilson', plan=Premium Plan, activeLoans=2/5, fees=$0.00}
+Member{id=103, name='Charlie Brown', plan=VIP Plan, activeLoans=1/10, fees=$0.00}
+
+--- ACTIVE LOANS ---
+
+===========================================
+              END OF REPORT                
+===========================================
